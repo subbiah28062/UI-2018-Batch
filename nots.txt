@@ -1,0 +1,97 @@
+javaScript advantages:
+
+ 1. its lightweight 
+ 2. javascript with any backend frameworks like java,node,php etc
+ 3. Its open and cross platform
+ 4. we can make static html pages to dynamic
+
+ javaScript is client side scripting langulage 
+
+ 5. less server interaction
+ 6. increased interactivity 
+ 7. Richer interface 
+
+
+ limitations;
+ 1. it doen't have multi threading or multi processing
+ 2. it can't be used for network application
+ 3. javascript we can t read or write the files because of the security reasons 
+
+
+ 2+3+5+8+9+10
+
+ processor -- it creates 3 threads 2+3 5+8 9+10
+                2+3+5+8+9+10
+
+white spaces line breaks 
+
+
+ it is case sensitivity
+var a=10;
+var A=20; 
+
+letter or _ 1
+
+mapName . -- camel case`
+
+javascript Datatypes
+
+  Numbers-- 1,2,2
+  Strings
+  Boolean
+   null
+   undefined
+
+
+   Javascript variable scopes
+
+    Global scope 
+    functional scope or local scope 
+
+    block level scope achieved through let keyword (es6)
+
+    operators +,-,%,*,
+    var a=10;
+     ++a --- 11 (preincremented)
+     a++ -- 10(postincrement)
+
+     a= [1,2,3];
+     for(var i=0;i<3;++i){
+         print(a[i]);
+     }
+
+
+logical operators
+
+  && -- A&&B A true and B true -- true
+  || -- either on eis true
+  ! -- !A
+
+
+typeof
+
+JSON -- javascript object notation
+
+var a={
+    "key":"value"
+}
+
+https://swapi.co/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
