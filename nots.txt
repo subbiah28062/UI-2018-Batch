@@ -78,9 +78,50 @@ var a={
 
 https://swapi.co/
 
+Dialog boxes
+
+alert -- it will gives the popup button with only option that will be ok
+
+Confirm -- it has 2 options 1.yes 2.no
+
+prompt -- by using the prompt with out the useName
+
+console.log -- it will print the values in devlopemnt console
+
+window.location -- redirect 
+
+session storage 
+local storage
+
+cookies 
 
 
+break and continue
 
+for(var i=0;i<5;i++){
+    if(i == 3){
+        break;
+    }
+    console.log(i);
+}
+output:- 0,1,2
+
+for(var i=0;i<5;i++){
+    if(i == 3){
+        continue;
+    }
+    console.log(i);
+}
+
+output: 0,1,2,4
+
+variables to Numbers
+parseInt
+parseFloat
+Number
+
+
+NaN -- not a number
 
 
 
