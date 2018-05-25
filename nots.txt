@@ -11,6 +11,7 @@ javaScript advantages:
  6. increased interactivity 
  7. Richer interface 
 
+AJAX -- asynchronous javascript and xml
 
  limitations;
  1. it doen't have multi threading or multi processing
@@ -82,7 +83,7 @@ Dialog boxes
 
 alert -- it will gives the popup button with only option that will be ok
 
-Confirm -- it has 2 options 1.yes 2.no
+Confirm -- it has 2 options 1.cancel-- false 2.Ok -- true
 
 prompt -- by using the prompt with out the useName
 
@@ -90,8 +91,8 @@ console.log -- it will print the values in devlopemnt console
 
 window.location -- redirect 
 
-session storage 
-local storage
+session storage -- window.sessionStorage
+local storage -- window.localStorage
 
 cookies 
 
@@ -126,7 +127,49 @@ NaN -- not a number
 
 
 
+isNaN -- true -- if it is not a number it returns false
 
+
+Substring
+
+1. slice -- extracts a prtof stirng start and end and also it will take -ve values 
+2.Substring -- it wont take negative values
+3.substr -- the second argument will be length
+
+
+var a=[];
+
+var a = new Array();
+
+splice -- it takes 3 parameters and 3rd one is optional
+1 -- starting or index 
+2 -- how many values do you want to replace
+3 -- the values which you want to replace
+
+
+splice will alters the array 
+
+sourseArray    destArray
+  3 elemnst 
+
+  sourceArray.splice(1,1);
+  2 elements 
+
+  destArray=sorceArray.slice(1);
+
+  121 --- 121
+  123 --- 321
+
+  string reverse in a single line
+
+  firstname lastname age -- sort on age 
+
+
+  insertion sort -- 20,18,17
+
+  now my pointer ponits to 0 and compare with 1 st index  -- 18,20,17 
+  now my poonter points to 1 and compare with 2 elemnst  -- 18,17,20
+  now my ointer points to 0 and compare with 1st element -- 17,18,20 
 
 
 
