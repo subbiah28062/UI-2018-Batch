@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="text" id="num">
+        <button onclick="add('8')">8</button>
+        <button onclick="add('2')">2</button>
+        <button onclick="add('pow')">power</button>
+        <button onclick="result()">result</button>
+        <button onclick="getRandom()">Random</button>
+        <!--<button onclick="power()">Power</button>
+        <button onclick="sqrt()">Squareroot</button>-->
+        <p id="result"></p>
+        <script>
+        function add(str){
+            var input=document.getElementById('num').value;
+            document.getElementById('num').value = input+str;
+        }
+        function result(){
+             var input=document.getElementById('num').value;
+             console.log(input); // 8pow2 Math.pow(8,2)
+             var values=input.split('pow');
+             document.getElementById('num').value = Math.pow(values[0],values[1]);
+        }
+        function getRandom(){
+            document.getElementById('num').value = Math.random();
+        }
+        console.log(new Date());
+        console.log(new Date().getMonth());
+        // console.log(Math.min(0,20,30,-10));
+        // console.log(Math.max(0,20,30,-10));
+        console.log(Math.random());
+        // console.log(Math.PI);
+        // console.log(Math.round(4.7));
+        // console.log(Math.round(4.5)); // returns 5 becuase it is greatertha and equla to 0.5
+        // console.log(Math.round(4.4)); // it returns 4 
+        // console.log(Math.abs(-4.7));// it returns positive value
+        // console.log(Math.ceil(4.1)); // it returns the value up to its nearest integer
+        // console.log(Math.floor(4.9));// it returns the rounded value down to the integer
+        // console.log(Math.pow(8,2)); // it returns the power of 8 output wii bne 64
+        // console.log(Math.sqrt(64)); // it returns the value of 8
+        // function power(){
+        //     var firstNumber= document.getElementById('num').value;
+        //     var secondNumber = prompt('enter the power value','');
+        //     document.getElementById('result').innerHTML = Math.pow(firstNumber,secondNumber);
+        // }
+        // function sqrt(){
+        //     var number= document.getElementById('num').value;
+        //     document.getElementById('result').innerHTML = Math.sqrt(number);
+        // }
+        </script>
+    </body>
+</html>

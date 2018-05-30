@@ -172,6 +172,18 @@ sourseArray    destArray
   now my ointer points to 0 and compare with 1st element -- 17,18,20 
 
 
+1. calculator
+2. try to print the numbers between 4 to 5
+
+[a-z]
+[A-Z]
+[a,3,4]
+[0-9]
+ˆ
+$
+*
++
+
 
 
 
