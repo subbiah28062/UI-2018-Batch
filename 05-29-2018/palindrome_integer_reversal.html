@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function pa()
+        {
+            var a,no,b,temp=0;
+            no=Number(document.getElementById("no_input").value);
+            b=no;
+            while(no>0)
+            {
+                a=no%10;
+                no=parseInt(no/10);
+                temp=temp*10+a;
+            }
+            if(temp==b)
+            {
+                alert("Palindrome number");
+            }
+            else
+            {
+                alert("Not Palindrome number");
+            }
+        }
+        function reverse()
+        {
+            var str = document.getElementById("no_input1").value.toString().split("").reverse().join("");
+            alert(str);
+        }
+    </script>
+</head>
+<body>
+Enter any Number: <input id="no_input">
+<button onclick="pa()">Check</button></br></br>
+Enter any number to reverse: <input id="no_input1">
+<button onclick="reverse()">reverse</button></br></br>
+</body>
+</html>

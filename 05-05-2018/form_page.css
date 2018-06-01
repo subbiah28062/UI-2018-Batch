@@ -1,0 +1,63 @@
+.nav_space{
+    padding: 42.735px 0px;
+}
+
+.signup_form{
+    background-color: #ff671b;
+    min-height: 253.15px;
+}
+form[id="NewLicenseForm"]
+{
+    width: 294px;
+    margin: 0 auto;
+    padding: 45px 0px;
+}
+#newlicendiv div
+{
+
+    margin: 10px 10px;
+}
+label
+{
+    padding: 10px 0px;
+}
+button
+{
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+button[name="submit"]
+{
+    color: #ffffff;
+    background-color: #4cae4c;
+    padding: 3px 20px;
+}
+input
+{
+    padding: 8px 5px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+}
+button,label,form[id="NewLicenseForm"]
+{
+    display: block;
+}
+#phone_number, #phone_number_ext, #pizza_rewards, .pizza_rewards_label{
+    display:inline-block;
+}
+#phone_number{
+    width: 222.03px;
+}
+#phone_number_ext{
+    max-width: 47.97px;
+}
+
+#name, #address, #email, #conform_email, #password{
+    min-width: 274px;
+}
+#submit{
+    margin: 0px 62px;
+}
+* {
+    box-sizing: border-box;
+}

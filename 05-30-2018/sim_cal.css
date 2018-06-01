@@ -1,0 +1,16 @@
+#calc-contain{
+    width:300px;
+    height:300px;
+    margin: 40px auto;
+}
+button{
+    width:31px;
+    padding:10px;
+    margin:10px;
+}
+input{
+    width: 100%;
+}
+#but{
+    margin: 20px 42px;
+}

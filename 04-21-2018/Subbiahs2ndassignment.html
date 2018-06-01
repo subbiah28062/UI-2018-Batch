@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--head of the html-->
+    <head>
+        <title>DVM</title>
+        <style></style>
+        <link href="Subbiahs2ndassignment.css" rel="stylesheet"/>
+    </head>
+    <!--body of the html-->
+    <body>
+    <!--header-->
+        <header><h1>Learners license form</h1></header>
+        <section>
+            <header>
+                <nav>
+                    <ui>
+                        <div>
+                            <li>Home</li>
+                            <li>Gallary</li>
+                            <li>Chronographical Order</li>
+                            <li>Highlights</li>
+                            <li>Contact</li>
+                        </div>
+                    </ui>
+                </nav>
+            </header>
+            <section>
+                <!--form heading-->
+                <form id="NewLicenseForm">
+                    <!--first name-->
+                    <div>
+                        <label for="firstname" id="label1" >Applicant's First name:</label>
+                        <input type="text" id="firstname" name="fname" placeholder="Enter first name" />
+                    </div>
+                    <!--last name-->
+                    <div>
+                        <label for="lastname" id="label2">Applicant's Last name:</label>
+                        <input type="text" id="lastname" name="lname" placeholder="Enter last name" />
+                    </div>
+                    <!--gender-->
+                    <div>
+                        <label for="gender">Applicant's Gender</label>
+                        <div id="gender" style="margin: 0;padding: 0px 15px;">
+                            <label for="male">male</label>
+                            <input type="radio" id="male" name="gender" value="male"/>
+                            <label for="female">female</label>
+                            <input type="radio" id="female" name="gender" value="female"/>
+                        </div>
+
+                    </div>
+                    <!--are you senior citizen-->
+                    <div>
+                        <label for="seniorcitizen">Is applicant a senior citizen:</label>
+                        <input type="checkbox" id="seniorcitizen" name="seniorcitizen"/>
+                    </div>
+                    <!--submit button-->
+                    <div>
+                        <button type="submit" id="submit" name="submit">
+                            <snap>submit</snap>
+                        </button>
+                    </div>
+                    <!--reset button-->
+                    <div>
+                        <button type="retest" id="reset" name="reset">
+                            <snap>cancel</snap>
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <footer>I'm the bottom</footer>
+    </body>
+</html>

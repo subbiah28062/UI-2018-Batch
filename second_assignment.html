@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--head of the html-->
+    <head>
+        <title>DVM</title>
+    </head>
+    <!--body of the html-->
+    <body>
+    <!--header-->
+    <div>
+        <header><h1>Learners license form</h1></header>
+    </div>
+        <section>
+            <!--form heading-->
+            <form id="NewLicenseForm">
+                <!--first name-->
+                <div>
+                    <label for="firstname">Applicant's First name:</label>
+                    <input type="text" id="firstname" name="fname" placeholder="Enter first name" />
+                </div>
+                <br/>
+                <!--last name-->
+                <div>
+                    <label for="lastname">Applicant's Last name:</label>
+                    <input type="text" id="lastname" name="lname" placeholder="Enter last name" />
+                </div>
+                <br/>
+                <!--gender-->
+                <label for="gender">Applicant's Gender</label>
+                <div id="gender">
+                    <label for="male">male</label>
+                    <input type="radio" id="male" name="gender" value="male"/>
+                    <label for="female">female</label>
+                    <input type="radio" id="female" name="gender" value="female"/>
+                </div>
+                <br/>
+                <!--are you senior citizen-->
+                <div>
+                    <label for="seniorcitizen">Is applicant a senior citizen:</label>
+                    <input type="checkbox" id="seniorcitizen" name="seniorcitizen"/>
+                </div>
+                <button type="submit" id="submit" name=""submit>
+                    <snap>submit</snap>
+                </button>
+
+
+            </form>
+        </section>
+        <footer></footer>
+    </body>
+</html>
