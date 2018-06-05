@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Table</title>
+</head>
+<body>
+<table id="myTable">
+    <tr>
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">Country</th>
+        <th onclick="sortTable(2)">Origin</th>
+    </tr>
+    <tr>
+        <td>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>asian</td>
+    </tr>
+    <tr>
+        <td>North/South</td>
+        <td>UK</td>
+        <td>latino</td>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+        <td>african</td>
+    </tr>
+    <tr>
+        <td>Koniglich Essen</td>
+        <td>Germany</td>
+        <td>white american</td>
+    </tr>
+    <tr>
+        <td>Magazzini Alimentari Riuniti</td>
+        <td>Italy</td>
+        <td>european</td>
+    </tr>
+    <tr>
+        <td>Paris specialites</td>
+        <td>France</td>
+        <td>asian</td>
+    </tr>
+    <tr>
+        <td>Island Trading</td>
+        <td>UK</td>
+        <td>asian</td>
+    </tr>
+    <tr>
+        <td>Laughing Bacchus Winecellars</td>
+        <td>Canada</td>
+        <td>asian</td>
+    </tr>
+</table>
+    <script>
+        function sortTable(z) {
+            var rows, switching, i, x, y;
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = document.getElementsByTagName("TR");
+                // console.log(rows);
+                for (i = 1; i < (rows.length - 1); i++) {
+                    x = rows[i].getElementsByTagName("TD")[z];
+                    y = rows[i + 1].getElementsByTagName("TD")[z];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+        }
+        // // var obj = new Object();
+        // // obj.name = "Raj";
+        // // obj.age = 32;
+        // // obj.married = false;
+        // var data = [["fn","ln","age","sex","score"],["subbiah","chandramouli","23","male","230"],["akil","srini","24","male","0"],["vidisha","xyz","25","female","230"],["ket","xyz","24","male","230"]];
+        // // console.log(data[1][0]);
+        // //convert object to json string
+        // var string = JSON.stringify(data);
+        // // console.log("123");
+        // //convert string to Json Object
+        // var b= JSON.parse(string);
+        // console.log(b[1][0]);
+    </script>
+</body>
+</html>
