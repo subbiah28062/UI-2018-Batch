@@ -117,20 +117,23 @@
     -querySelectorAll:
         var btn = document.querySelectorAll("li");
         
-**Current Event vs Target Event**
-**bubbling,delegation,capturing**
-//script in body: lazy loading is good
+    **Current Event vs Target Event**
+    **bubbling,delegation,capturing**
+    //script in body: lazy loading is good
+    
 06-06-2018
+
     CALL, APPLY and Bind:
         call -coma seperated arg ex: .call(this, age,location)
         apply -array ex:
         bind- creates a function copy which can be called later
     Call back
     json-javascript object notation;
-//sync, await-read by userself;Object properties-study;
+    //sync, await-read by userself;Object properties-study;
 
 
 06-07-2018
+
     Form element has an action attribute
         <form action = "users/add">
             <input>
