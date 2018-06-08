@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div id="displayId">
+
+        </div>
+    </section>
+    <footer></footer>
+    <script>
+        //Declaring variable
+        var xhttp, jsonData, parsedData, getDisplayId, dropDown, dropDownList, dropDownListValue, dropButton;
+        var getDiv, displayTitle, displayData, data, title;
+        //reading json and saving it
+        function doAjax(){
+            xhttp = new XMLHttpRequest();
+            //openeing a connection
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+            //sending a request
+            xhttp.send();
+            //receiving and checking status and ready state
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    // saving the input response to jsonData
+                    jsonData = xhttp.response;
+                    UiLoad(jsonData)
+                }
+            }
+        }
+        //creating HTML Elements
+        function UiLoad(data){
+            parsedData = JSON.parse(data);
+            getDisplayId = document.getElementById("displayId");
+            //creating select element
+            dropDown = document.createElement("select");
+            dropDown.id = "selectList";
+            //Appending options to select
+            parsedData.forEach(function (all) {
+                //creating options element
+                dropDownList = document.createElement("option");
+                dropDownList.text = all.id;
+                dropDown.append(dropDownList);
+            });
+            //Appending select to div
+            getDisplayId.append(dropDown);
+            //onchange event handler of select element
+            dropButton = document.getElementById("selectList");
+            dropButton.onchange = DisplayItem;
+            function DisplayItem() {
+                getDiv =document.getElementById("displayId");
+                displayTitle = document.createElement("p");
+                displayTitle.id ="bodyEle";
+                displayData = document.createElement("p");
+                displayData.id ="titleEle";
+                data = parsedData[dropButton.selectedIndex].body;
+                title = parsedData[dropButton.selectedIndex].title;
+                getDiv.append(displayData);
+                getDiv.append(displayTitle);
+                document.getElementById("bodyEle").innerHTML= "Body content ="+data;
+                document.getElementById("titleEle").innerHTML= "Title content ="+title;
+
+            }
+        }
+        doAjax();
+
+
+
+    </script>
+</body>
+</html>
