@@ -173,6 +173,14 @@
     -API-
         REQUEST HEADER
         RESPONSE HEADER
+    
+    gvar getDisplayId = document.getElementById("displayId");
+    //creating select element
+    var dropDown = document.createElement("select");
+    dropDown.id = "selectList";
+    //appending slect to main div
+    getDisplayId.append(dropDown);
+                  
         
     
             
