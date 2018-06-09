@@ -95,6 +95,7 @@
         //Onclick has an drawback. On calling it twice it overwrites the first onclick.
          To overcome that we use btnEleObj.addEventListener(“click”,”showname”,false)
         
+        e.target to acces events html paramenters.
 
         
     
@@ -180,10 +181,73 @@
     dropDown.id = "selectList";
     //appending slect to main div
     getDisplayId.append(dropDown);
-                  
+    
+06-08-2018
+
+    **Big O notation**
+        https://medium.com/cesars-tech-insights/big-o-notation-javascript-25c79f50b19b
+        for(i=0;i<n;i++){
+        }
+            The code is O(n);
+            
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+            }
+        }
+            The code is O(n*n);
+            
+        for(i=0;i<n;i++){
+                for(j=0;j<n;j++){
+            }
+        }
+        for(k=0;k<n;k++){
+        }
+            The code is O(n*n)+n;
+            
+    Design pattern:
+        nicholos (books) read them
+        creational pattern
+        structural pattern
+        behavioural pattern
+        Constructor pattern-already practiced
+        
+    ECMA:
+        javascript derived from ECMA script; so far we have used ES 5.
+        ES6 is latest
+        In ES6 defined let and conct. it can be used to define variables.
+            but when using Let or conct, variable becomes block scope.i.e u cant access varaible outside
+            their block.
+        Let: allows to update variable.
+        const: doesnt allows to change variable. on trying to change throughs error.
+        
+    //javascript has functional scope. i.e variable can be accessed within the function.
+    //when the function is declared it looks for all the variable inside it before executing.
+    
+    Arrow function:
+        Lexical scope:
+        let s = (a,b) => a+b;  
+        
+        equal to
+        
+        function s(a,b){
+            return a+b;
+        }
         
     
-            
+    Closures
+            inner function keeps track of outer functions variable
+                function pow(a){
+                            return function(b){
+                                return a+b;
+                            }
+                        }
+                        var a =pow(2);
+                        a(2);//ans:4
+                        a(4);//ans:6
+                        
+    Timer:
+        setTimer(fn,1000) //it takes ms. it execeutes function after 1000ms;
+        setInterval:(fn,1000) // should clear the interval orelse would be running and would kill the memory.
             
         
  
