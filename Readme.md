@@ -247,7 +247,7 @@
                         
     Timer:
         setTimer(fn,1000) //it takes ms. it execeutes function after 1000ms;
-        setInterval:(fn,1000) // should clear the interval orelse would be running and would kill the memory.
+        setInterval:(fn,1000) // should cler the interval orelse would be running and would kill the memory.
             
         
  
