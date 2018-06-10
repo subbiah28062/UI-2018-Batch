@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Table</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+
+    </script>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div id="displayId">
+
+        </div>
+    </section>
+    <footer></footer>
+    <script>
+        var xhr, but=[];
+        function doAjax(){
+            if(window.ActiveXObject){ /// IE Older versions
+                xhr = new ActiveXObject("MICROSOFT.HTTP")
+            }else{ // Non-IE Browsers
+                xhr = new XMLHttpRequest();
+            }
+            ///2.open connection between client and server
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users",true);
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.setRequestHeader("Content-Type","application/json");
+
+            ///3. Send a Request
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status == 200){
+                    var res = xhr.response;
+                    uiLoad(res)
+                }
+            }
+        }
+
+        function uiLoad(data) {
+            parsedData = JSON.parse(data);
+            var getDisplayId = document.getElementById("displayId");
+            //creating select element
+            var mainTab = document.createElement("table");
+            mainTab.id = "mainTab";
+            getDisplayId.append(mainTab);
+            //First row
+            var tRow = document.createElement("tr");
+            tRow.id = "topicRow";
+            mainTab.append(tRow);
+            var topicInc=0;
+            //Topic content
+            for (i in parsedData[0]) {
+                if (parsedData[0].hasOwnProperty(i)) {
+                    var tHeading = document.createElement("th");
+                    tHeading.innerText = i;
+                    tHeading.id = "col"+ topicInc;
+                    tRow.append(tHeading);
+                }
+                topicInc++;
+            }
+            //Body content
+            for(var items in parsedData)
+            {
+                tRow = document.createElement("tr");
+                mainTab.append(tRow);
+                for (var k in parsedData[0]) {
+                    if (parsedData[0].hasOwnProperty(k)) {
+                        var tBody = document.createElement("td");
+                        tBody.textContent = parsedData[items][k];
+                        tRow.append(tBody);
+                    }
+                }
+            }
+
+            var topicLength = Object.keys(parsedData[0]).length;
+            for (let touchEve=0; touchEve < topicLength; touchEve++) {
+                but[touchEve] = document.getElementById("col"+touchEve);
+                console.log(but);
+                but[touchEve].addEventListener("click",function(){sortTable(touchEve);},false);
+            }
+        }
+
+        doAjax();
+
+        //SORTING TABLE
+        function sortTable(z) {
+            console.log(z);
+            var rows, switching, i, x, y;
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = document.getElementsByTagName("TR");
+                // console.log(rows);
+                for (i = 1; i < (rows.length - 1); i++) {
+                    // console.log(document.getElementById("tBody"));
+                    x = rows[i].getElementsByTagName("TD")[z];
+                    // console.log(x);
+                    y = rows[i + 1].getElementsByTagName("TD")[z];
+                    // console.log(y);
+                    if (x.innerText.toLowerCase() > y.textContent.toLowerCase()) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        // accessing tbody parent of tr. if you want you can define
+                        // a id to tbody and bind it using getElemtById(""). the below commented code can also be used.
+                        // document.getElementById("tBody").insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
