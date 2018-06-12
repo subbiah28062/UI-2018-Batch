@@ -22,7 +22,7 @@
             function doAjax() {
                 let xhr;
                 if (window.ActiveXObject) { /// IE Older versions
-                    xhr = new ActiveXObject("MICROSOFT.HTTP")
+                    xhr = new ActiveXObject("MICROSOFT.HTTP");
                 } else { // Non-IE Browsers
                     xhr = new XMLHttpRequest();
                 }
@@ -30,7 +30,6 @@
                 xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
                 xhr.setRequestHeader("Accept", "application/json");
                 xhr.setRequestHeader("Content-Type", "application/json");
-
                 ///3. Send a Request
                 xhr.send();
                 xhr.onreadystatechange = function () {

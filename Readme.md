@@ -1,11 +1,14 @@
 06-04-2018
         
     -JS is a single thread programming language.
-    -JS is a dynamic, prototypical and functional language.
+    -JS is a dynamic 
+    prototypical 
+        In javascript, every object has a secret link to the object which created it, forming a chain. When an object is asked for a property that it does not have, its parent object will be asked... continually up the chain until the property is found or until the root object is reached.
+    functional language.
     
     -object:
-        literal
-        constructor
+        literal {}
+        constructor 
         create(.create study by yourself)
     -function:
         named:
@@ -25,7 +28,7 @@
                     this.period = period;
                 }
                 Year.prototype=new College("TAMUK","Kingsville");
-                var college1 = new Year();
+                var college1 = new Year(1989);
                 console.log(college1);
             one level multiple parents
         Extending a class			
@@ -250,4 +253,110 @@
         setInterval:(fn,1000) // should cler the interval orelse would be running and would kill the memory.
             
         
- 
+06-09-2018
+
+    Promises:
+        var promise = new promise(function(resolve,reject))
+        
+        
+        
+        
+    ES6:
+        MAP-array
+            var b = a.map(obj, index)=>{
+                return index            
+            }
+            
+            
+            creates a array of index from object a
+            
+            Next function.
+            
+            //for each and map are same. but for each just iterates but map can be saved in new array.
+        Filter-array
+            
+        Reduce-
+        
+        
+        ES6 new syntax:
+        
+        value swap: 
+        a={1,2,3,4,5}
+        [a,b]=[b,a];
+        [c,d]=a
+        //c=a[0];d=a[1];
+        [c,,d]=a
+        //c=a[0];d=a[2];
+        [c,d,...e]=a;//... means spread operators it takes rest all array
+        //c=1;d=2;e=[3,4,5];
+        //map,filter,reduce,promise
+        //... spread operator takes all array
+        name = "subbiah";
+        console.log("this is ${name}");//prints: this is subbiah;
+        
+        
+        Object destruction:
+            
+06-11-2018
+    
+    jquery:
+        library 
+        angular 1 use jquery
+        can write in angular or react based application, but now we have better oprions   
+        2ways to use jquery. can download the full jquery file, keep in local and use them.
+            another method use content delivery network, website hosts these codes online we can just
+            call these links and use the jquery in our program.
+            
+         
+    CDN:content delivery network
+        
+    mvc:
+    
+    Javascript minifiers removes the empty space,
+    
+    Taskrunners:
+        GruntJS:used to do tasks. ex:less compiling ect
+        Gulp
+    
+    WebPack
+    
+    //There can be only one windows.onload for a html
+    //event handler
+    //dom lookup by selector
+    //jquery chaining
+    
+    
+    jquery dom lookup 
+        $(".container")
+        $("#name")
+        $(".container").val()
+        $("label[for=name]")
+        $("label[for=name]").text()/get text from html
+        $("label[for=name]").text("new text")//changes text
+        $("input:text:visible")//: means and. find input which is a text and visible.
+        $("label[for]")[0].attr("").style({"color":"red","background-color":"blue"})
+
+
+
+        //toggleclass jquery used to add remove class based on toggle state.**interesting****read it**            
+        // cant add anything after hasclass().// hasclass used to find whether element has the class or not.
+        // in jquery in every method u can set the value and get the value. .val()-getting the value
+            .vale("show this")-setting the value 
+        
+        
+        jquery method:
+            live
+            delegate
+            on- on is used to add event handler to dynamically added element
+            
+            
+    //absolute (url)and relative path (local path).
+    //ajax get post pull is possible with one address. it is possible with restful web service.
+    
+    
+    
+closure
+hoisting
+bubbling
+less
+grunt
