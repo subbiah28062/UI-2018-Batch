@@ -2,24 +2,50 @@
         
     -JS is a single thread programming language.
     -JS is a dynamic 
+        no int no float. just variable with var
     prototypical 
-        In javascript, every object has a secret link to the object which created it, forming a chain. When an object is asked for a property that it does not have, its parent object will be asked... continually up the chain until the property is found or until the root object is reached.
+        In javascript, every object has a secret link to the object which created it, forming a chain.
+        When an object is asked for a property that it does not have, its parent object will be asked...
+         continually up the chain until the property is found or until the root object is reached.
     functional language.
     
     -object:
         literal {}
+            var car = {type:"Fiat", model:"500", color:"white"};
         constructor 
+            To create new instance of object of a object
+            function person(a,b){
+                this.a=a;//this point to person on using new constructor
+                this.b=b;
+            }
+            var name = new person(attr1,attr2);
+            new is the constructor and it is a function by itself;
         create(.create study by yourself)
     -function:
         named:
-            function name(param){}
-            var name = new function(){}
+            function name(a){this.a=a}
+            var name1 = new function(a){this.a=a}
+        anonyms function:
+            IIFE
+                (function(i){
+                })(i);
+                
+        //method and function should be called with();
+        // you can call a function and a method but you can call a object; name.a=error;
+        //method is diffrent;object is diffrent and object is diffrent;
     -operators:
         ==(coeration i.e. conversion and comparison, which decreases performance)
         ===(use === for increased performance)
     -prototype:
+        Prototype is used to inherit method and properties of object.
+        
+        Sometimes you want to add new properties to all existing objects of a given type.
+        
+        Sometimes you want to add new properties to an object constructor.
+                
         Inheritance(prototypical chain)
             Multi level inheritance
+                //inheriting properties of college object into year.
                 function College(name,location){
                     this.name = name;
                     this.location = location;
@@ -30,9 +56,21 @@
                 Year.prototype=new College("TAMUK","Kingsville");
                 var college1 = new Year(1989);
                 console.log(college1);
+                
+                //inheriting new property to an object
+                function a(b){
+                    this.b=b;
+                }
+                var c = new a(123);
+                a.prototype.d = function(){
+                    return this.b
+                }
+                console.log(c.d());
+                
             one level multiple parents
         Extending a class			
-            //Create a empty function and use prototype to add parameters, because evry instance creates a reference for every properties which wastes memory.
+            //Create a empty function and use prototype to add parameters, because evry instance creates
+            a reference for every properties which wastes memory.
     
     -We get server ip from dns using the domain name.
     -single thread programming??
@@ -45,20 +83,29 @@
 06-05-2018
         
     -virtual DOM
+        There’s no big difference between the “regular” DOM and the virtual DOM. This is why the JSX 
+        parts of the React code can look almost like pure HTML
     -shadow DOM
+    http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
+    //dom link
     
     //DOM is expensive(perfomance), so save the DOM when u access once. 
     ex: var a = document.GetElementById("name");
     a.style.color="red";
     b= a.value;
     
-    //Create a empty function and use prototype to add parameters, because every instance creates a reference for every properties which wastes memory.
+    //Create a empty function and use prototype to add parameters, because every instance creates a 
+    reference for every properties which wastes memory.
     
     -Event:
         Event type
         Element(HTML elements)
         Event Handler(on Event occurrence it will trigger Event Handler)
+            getelementbyid
+            get elementbytagname
         Binding(binding event and html elemt)//-This gives current target element
+            onclick;
+            onchange;etc
     
         Binding inline: 
             using events(link onclick) on html. Ex: <button onclick=”start()”/>
@@ -71,7 +118,7 @@
             function showname(){
             console.log(“test console”)
             }
-        THIRD WAY:
+        TEvent Listeners:
             .addEventListener("click",function name,false)
             
         Event bubbling:
@@ -93,14 +140,13 @@
                             e.stopPropagation();
                             console.log(e.target.innerText);
                         }
+                        //this does not work with inline events;
             **e.stop.immediatePropagation()**
         
         //Onclick has an drawback. On calling it twice it overwrites the first onclick.
          To overcome that we use btnEleObj.addEventListener(“click”,”showname”,false)
         
         e.target to acces events html paramenters.
-
-        
     
     -Script:
         //Having script in body is lazy loading.
@@ -116,7 +162,7 @@
                     e.preventDefault();
                     console.log("event prevented");
                 }
-            </script>
+        </script>
             
     -querySelectorAll:
         var btn = document.querySelectorAll("li");
@@ -129,7 +175,64 @@
 
     CALL, APPLY and Bind:
         call -coma seperated arg ex: .call(this, age,location)
+            The call method is used to call a method or functoin on behalf of another object. 
+            It allows you to change the THIS object of a function from the original context to the
+            new object specified by thisObj.
+            1)Using call to chain constructors for an object.
+                function Product(name, price) {
+                  this.name = name;
+                  this.price = price;
+                }
+                
+                function Food(name, price) {
+                  Product.call(this, name, price);
+                  this.category = 'food';
+                }
+                
+                function Toy(name, price) {
+                  Product.call(this, name, price);
+                  this.category = 'toy';
+                }
+                
+                var cheese = new Food('feta', 5);
+                var fun = new Toy('robot', 40);
+            2)Using call to invoke an anonymous function//using iife
+                var animals = [
+                  { species: 'Lion', name: 'King' },
+                  { species: 'Whale', name: 'Fail' }
+                ];
+                
+                for (var i = 0; i < animals.length; i++) {
+                  (function(i) {
+                    this.print = function() {
+                      console.log('#' + i + ' ' + this.species
+                                  + ': ' + this.name);
+                    }
+                    this.print();
+                  }).call(animals[i], i);
+                }
+            3)Using call to invoke a function and specifying the context for 'this'
+                function greet() {
+                  var reply = [this.animal, 'typically sleep between', this.sleepDuration].join(' ');
+                  console.log(reply);
+                }
+                
+                var obj = {
+                  animal: 'cats', sleepDuration: '12 and 16 hours'
+                };
+                
+                greet.call(obj);
+            4)Using call to invoke a function and without specifying the first argument
         apply -array ex:
+            1)Using apply to append an array to another
+                var array = ['a', 'b'];
+                var elements = [0, 1, 2];
+                var array = array.concat(elements);//both gives same result
+                array.push.apply(array, elements);
+                console.info(array);
+            2)using apply to chain constructors
+            //same as call but arrguments sent in array
+            
         bind- creates a function copy which can be called later
     Call back
     json-javascript object notation;
@@ -146,15 +249,16 @@
     Ajax(Asynchronous JavaScript and XML)
         used for client server communication; its not a technology its a way of js to 
         -use object XMLHttpRequest
-        End point url- url where payload is going to be sent.
+        **End point url**- url where **payload** is going to be sent.
         pay load-json data sent from client side is called as pay load.
         CRUD-creating,reading,updating and deleting a data
         Method type:(To interact with server)
             GET-get data from server
             POST-to send data to server
-            PUT-to update the posted data. To access the server we should have the id(id specified to each user) 
+            PUT-to update the posted data. To access the server we should have the id(id specified 
+            to each user) 
             DELETE- delete data from server.
-     Ajax steps:  
+    Ajax steps:  
         1)create an instance of XMLHttpRequest
         2)open connection between client and server
         3)send request 
@@ -178,7 +282,7 @@
         REQUEST HEADER
         RESPONSE HEADER
     
-    gvar getDisplayId = document.getElementById("displayId");
+    var getDisplayId = document.getElementById("displayId");
     //creating select element
     var dropDown = document.createElement("select");
     dropDown.id = "selectList";
@@ -250,17 +354,14 @@
                         
     Timer:
         setTimer(fn,1000) //it takes ms. it execeutes function after 1000ms;
-        setInterval:(fn,1000) // should cler the interval orelse would be running and would kill the memory.
+        setInterval:(fn,1000) // should cler the interval orelse would be running and would kill the 
+        memory.
             
         
 06-09-2018
 
     Promises:
         var promise = new promise(function(resolve,reject))
-        
-        
-        
-        
     ES6:
         MAP-array
             var b = a.map(obj, index)=>{
@@ -339,7 +440,8 @@
 
 
         //toggleclass jquery used to add remove class based on toggle state.**interesting****read it**            
-        // cant add anything after hasclass().// hasclass used to find whether element has the class or not.
+        // cant add anything after hasclass().// hasclass used to find whether element has the class 
+        or not.
         // in jquery in every method u can set the value and get the value. .val()-getting the value
             .vale("show this")-setting the value 
         
