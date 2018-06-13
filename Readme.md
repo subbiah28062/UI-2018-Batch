@@ -234,7 +234,29 @@
             //same as call but arrguments sent in array
             
         bind- creates a function copy which can be called later
+            
+            var module = {
+                x:10,
+                xyz : function(){
+                    return this.x;
+                }
+            }
+            var unbond = module.xyz;
+            var bond = unbond.bind(module);
     Call back
+        function, sending a function as an parameter to another function
+        
+        function greeting(name) {
+          alert('Hello ' + name);
+        }
+        
+        function processUserInput(callback) {
+          var name = prompt('Please enter your name.');
+          callback(name);
+        }
+        
+        processUserInput(greeting);
+        
     json-javascript object notation;
     //sync, await-read by userself;Object properties-study;
 
@@ -274,6 +296,12 @@
                 -200's
                 -300's
                 -400's
+    Ajax jquery:
+         $.get("https://jsonplaceholder.typicode.com/posts", function(data, status){
+                            data.map( items =>{
+                                $('#content').append("<li>" + items.body + "</li>");
+              })
+          });
     Attributes:
         Button not to submit use attribute type="button" orelse it will submit the form.
         Method attribute:
@@ -377,7 +405,16 @@
         Filter-array
             
         Reduce-
-        
+            const array1 = [1, 2, 3, 4];
+            const reducer = (accumulator, currentValue) => accumulator + currentValue;
+            
+            // 1 + 2 + 3 + 4
+            console.log(array1.reduce(reducer));
+            // expected output: 10
+            
+            // 5 + 1 + 2 + 3 + 4
+            console.log(array1.reduce(reducer, 5));
+            // expected output: 15
         
         ES6 new syntax:
         
@@ -462,3 +499,18 @@ hoisting
 bubbling
 less
 grunt
+
+
+About project
+About yourself.
+Html,Css-new
+es6 
+    arrow function
+block scope
+    
+css flex
+call and apply
+
+promise- resolve,reject. call backs are used in promises. async
+
+callback-promise,ajax call,event handler. 
