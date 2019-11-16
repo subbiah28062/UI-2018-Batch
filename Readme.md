@@ -9,6 +9,9 @@
          continually up the chain until the property is found or until the root object is reached.
     functional language.
     
+    -Box model:
+        html box model padding,margin border and element width & height.
+        elements body consist of padding argin and border which is usally called box model.
     -object:
         literal {}
             var car = {type:"Fiat", model:"500", color:"white"};
@@ -122,6 +125,7 @@
             .addEventListener("click",function name,false)
             
         Event bubbling:
+            starts from child and flows outwards in search of variable
             e.stoppropagation()
                 var googleBtn = document.getElementById("googleId");
                         googleBtn.addEventListener("click",showname,false);
@@ -148,6 +152,25 @@
         
         e.target to acces events html paramenters.
     
+    -Event delegation:
+        if u have 6childs and want click event for all 6 u donot need to define 6 click event
+        instead u can assign click event to the parent and use event to catch what child u have clicked
+            <ul id=book>
+                <li id=book1>a</li>
+                <li id=book2>b</li>
+                <li id=book3>c</li>
+                <li id=book4>d</li>
+            </ul>
+            <script>
+                var parent = document.getElementById("book")
+                parent.addEventListener('click',function(e){
+                    console.log(e.target.innertext," book clicked");
+                },false)
+            </script>
+            
+    -Event capturing:
+                    starts from parent and flows inwards 
+
     -Script:
         //Having script in body is lazy loading.
         //script is preferred to write in body.
@@ -168,7 +191,7 @@
         var btn = document.querySelectorAll("li");
         
     **Current Event vs Target Event**
-    **bubbling,delegation,capturing**
+    **capturing**
     //script in body: lazy loading is good
     
 06-06-2018
@@ -493,24 +516,106 @@
     //ajax get post pull is possible with one address. it is possible with restful web service.
     
     
+Interview questions:
+
+    closure
+    hoisting
+    bubbling
+    less
+    grunt
     
-closure
-hoisting
-bubbling
-less
-grunt
-
-
-About project
-About yourself.
-Html,Css-new
-es6 
-    arrow function
-block scope
     
-css flex
-call and apply
+    About project
+    About yourself.
+    Html,Css-new
+    es6 
+        arrow function
+    block scope
+        
+    css flex
+    call and apply
+    
+    promise- resolve,reject. call backs are used in promises. async
+    
+    callback-promise,ajax call,event handler. 
 
-promise- resolve,reject. call backs are used in promises. async
+06-13-2018
 
-callback-promise,ajax call,event handler. 
+    **Skip navigation**
+    
+    API:
+        EVENT
+        ARRAY
+        WINDOW OBJECT
+        storage:
+            session storage
+            local storage
+            
+    
+    Geolocation:        
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log(position.coords.latitude, position.coords.longitude);
+        });
+        
+        To catch error in geolocation and to print image:
+        
+            <p id="demo">Click the button to get your position.</p>
+            
+            <button onclick="getLocation()">Try It</button>
+            
+            <div id="mapholder"></div>
+            
+            <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            
+            function showPosition(position) {
+                var latlon = position.coords.latitude + "," + position.coords.longitude;
+                var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+                +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+                document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+            }
+            //To use this code on your website, get a free API key from Google.
+            //Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+            
+            function showError(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        x.innerHTML = "User denied the request for Geolocation."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        x.innerHTML = "Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        x.innerHTML = "The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        x.innerHTML = "An unknown error occurred."
+                        break;
+                }
+            }
+            
+    watchPosition(): change this object instead of getCurrentPosition();
+        clearWatch();
+    cache.manifest:
+    Web workers: current multiply js file simultaniously i.e. async
+    web socket:
+    
+    comparing values of array of objects in a json
+    var user1 = {name : "nerd", org: "dev"};
+    var user2 = {name : "nerd", org: "dev"};
+    
+    JSON.stringify(user2) === JSON.stringify(user1) 
+    
+    Angular 2/4:
+        transpilation = convert ts to js.
+        
+    **Date()-object read it**
+        
